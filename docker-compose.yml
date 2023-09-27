@@ -61,21 +61,21 @@ services:
       - "3100:8080"
 
   # The service that spins up all 3 services at once in one container
-  hoppscotch-aio:
-    container_name: hoppscotch-aio
-    build:
-      dockerfile: prod.Dockerfile
-      context: .
-      target: aio
-    env_file:
-      - ./.env
-    # depends_on:
-    #   hoppscotch-db:
-    #     condition: service_healthy
-    ports:
-      - "3000:3000"
-      - "3100:3100"
-      - "3170:3170"
+  # hoppscotch-aio:
+  #   container_name: hoppscotch-aio
+  #   build:
+  #     dockerfile: prod.Dockerfile
+  #     context: .
+  #     target: aio
+  #   env_file:
+  #     - ./.env
+  #   # depends_on:
+  #   #   hoppscotch-db:
+  #   #     condition: service_healthy
+  #   ports:
+  #     - "3000:3000"
+  #     - "3100:3100"
+  #     - "3170:3170"
 
   # The preset DB service, you can delete/comment the below lines if
   # you are using an external postgres instance
